@@ -32,6 +32,25 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+	gem 'cucumber-rails', require: false
+	gem 'database_cleaner'
+	gem 'fabrication'
+	gem 'pry'
+	gem 'rspec'
+	gem 'rspec-rails'
+	gem 'letter_opener'
+end
+
+group :test do
+	gem 'codeclimate-test-reporter', require: nil
+	gem 'coveralls'
+	gem 'email_spec'
+	gem 'launchy'
+	gem 'poltergeist'
+	gem 'webmock'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
