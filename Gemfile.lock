@@ -100,6 +100,7 @@ GEM
     multi_test (0.0.3)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    pg (0.17.1)
     poltergeist (1.5.0)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -199,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   coveralls
@@ -210,6 +212,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   letter_opener
+  pg
   poltergeist
   pry
   rails (= 4.0.2)
