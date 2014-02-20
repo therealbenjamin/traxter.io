@@ -1194,6 +1194,8 @@
 // $include-html-visibility-classes: $include-html-classes;
 
 @import 'foundation';
+@import url(http://fonts.googleapis.com/css?family=Faster+One);
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
 
 // image from http://wallpaperose.com/rainbow-orange-background.html
 body{
@@ -1216,8 +1218,26 @@ body{
   color: white;
   font-size: 3em;
   text-shadow: 1px 1px rgb(189,0,0);
+  font-family: 'Faster One', cursive;
 }
 
-body{font-family: 'ABeeZee', sans-serif;}
+body {
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+h2 {
+	text-align: center;
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+
 
 .contain-to-grid .top-bar{margin-bottom: 20px;}
+
+.new_user {
+	// width: 300px;
+	margin-left: 500px;
+	margin-right: 500px;
+	text-align: center;
+}
+
