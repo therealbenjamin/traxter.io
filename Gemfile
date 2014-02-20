@@ -28,6 +28,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'pg'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'haml'
+gem 'figaro'
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -40,8 +45,11 @@ group :test, :development do
 	gem 'database_cleaner'
 	gem 'fabrication'
 	gem 'pry'
+	gem 'guard-rspec'
+	gem 'guard-spork'
 	gem 'rspec'
 	gem 'rspec-rails'
+	gem 'spork-rails'
 	gem 'letter_opener'
 end
 
@@ -49,6 +57,7 @@ group :test do
 	gem 'codeclimate-test-reporter', require: nil
 	gem 'coveralls'
 	gem 'email_spec'
+	gem 'factory_girl_rails', '4.2.0'
 	gem 'launchy'
 	gem 'poltergeist'
 	gem 'webmock'

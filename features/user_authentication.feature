@@ -1,66 +1,72 @@
-Feature: User authentication
-  As a user
-  I want to be able to sign up/sign in/sign out
-
-  - Standard email/password signup without email confirmation
-  - Standard password reset via. email
-  - Standard login/logout
-
-  Scenario: User signs up with email and password
+Feature: Authentication
+  Scenario: Navigate to home page and go to sign up page
     When I go to the homepage
-    And I follow "Sign Up"
-    And I fill in "joe" for "Username"
-    And I fill in "joe@example.com" for "Email"
-    And I fill in "password" for "user_password"
-    And I fill in "password" for "Password confirmation"
-    And I press "Sign up"
-    Then I should see "Welcome! You have signed up successfully."
-    And I should see "Sign Out"
-    And I should not see "Sign In"
-    And I should not see "Sign Up"
-    When I follow "Sign Out"
-    Then I should not see "Sign Out"
-    And I should see "Sign In"
+    Then I should see an about link
+    Then I should see a contact link
+    Then I should see a sign in link
+    Then I should see a sign up link
+    When I click "Sign up now!"
+    Then I go to the sign up page
 
-  Scenario: Confirm that signing up with username lets you log in with username
+  Scenario: User successfully signs up with email and password
     When I go to the homepage
-    And I follow "Sign Up"
-    And I fill in "joe" for "Username"
+    And I click "Sign up now!"
     And I fill in "joe@example.com" for "Email"
-    And I fill in "password" for "user_password"
-    And I fill in "password" for "Password confirmation"
-    And I press "Sign up"
-    Then I should see "Welcome! You have signed up successfully."
-    When I follow "Sign Out"
-    And I follow "Sign In"
-    And I fill in "joe" for "Email / Username"
     And I fill in "password" for "Password"
-    And I press "Sign in"
-    Then I should see "Signed in successfully."
+    And I fill in "password" for "Password confirmation"
+    And I press "Sign up"
+    Then User count should change by 1
+    Then I should see a welcome message
+    And I should see "joe@example.com"
+    And I should see "Sign out"
+    And I should not see "Sign in"
+    And I should not see "Sign up"
+    When I click "Sign out"
+    Then I should not see "Sign out"
+    And I should see "Sign in"
+
+  Scenario: User unsuccessfully signs up with invalid email
+    When I go to the homepage
+    And I click "Sign up now!"
+    And I fill in "joe@example" for "Email"
+    And I fill in "password" for "Password"
+    And I fill in "password" for "Password confirmation"
+    And I press "Sign up"
+    Then User count should change by 0
+    Then I should see an error message
+    And I should see "Sign in"
+    And I should see "Sign up"
+    And I should not see "Sign out"
 
   Scenario: User can log in and log out with email
     Given the following user:
-      | username              | joe             |
-      | email                 | joe@example.com |
+     | email              | password   | password_confirmation   |
+     | raditude@gmail.com | password   | password                |
     When I go to the homepage
-    And I follow "Sign In"
-    And I fill in "joe@example.com" for "Email / Username"
+    And I click "Sign in"
+    And I fill in "raditude@gmail.com" for "Email"
     And I fill in "password" for "Password"
-    And I press "Sign in"
+    And I press "Go"
     Then I should see "Signed in successfully."
-    And I should see "Sign Out"
-    And I should not see "Sign In"
-    When I follow "Sign Out"
-    And I should not see "Sign Out"
-    And I should see "Sign In"
+    And I should see "Sign out"
+    And I should not see "Sign in"
+    When I click "Account"
+    Then I should see "Sign out"
+    When I click "Sign out"
+    Then I should see "Signed out successfully."
+    And I should not see "Sign out"
+    And I should see "Sign in"
 
-  Scenario: User can log in with username
-    Given the following user:
-      | username              | joe             |
-      | email                 | joe@example.com |
-    When I go to the homepage
-    And I follow "Sign In"
-    And I fill in "joe" for "Email / Username"
-    And I fill in "password" for "Password"
-    And I press "Sign in"
-    Then I should see "Signed in successfully."
+  Scenario: User can login successfully through Facebook
+    Given that I am signed in with "Facebook"
+    Then I should see "Successfully authenticated from Facebook account."
+    And I should not see "Sign in"
+    And I should not see "Sign up"
+    And I should see "Account"
+
+  Scenario: User cannot login through Facebook with invalid credentials
+    When I try and login with "Facebook" using invalid credentials
+    Then I should see "Could not authenticate you from Facebook"
+    And I should see "Sign in"
+    And I should see "Sign up"
+    And I should see "Sign in with Facebook"

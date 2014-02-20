@@ -1,0 +1,135 @@
+have_func: checking for rb_thread_blocking_region()... -------------------- yes
+
+"/usr/bin/clang -o conftest -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe conftest.c  -L. -L/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib -L. -fstack-protector -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib      -lruby.2.0.0  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"/usr/bin/clang -o conftest -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe conftest.c  -L. -L/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/lib -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib -L. -fstack-protector -L/usr/local/opt/libyaml/lib -L/usr/local/opt/readline/lib -L/usr/local/opt/libksba/lib -L/usr/local/opt/openssl/lib      -lruby.2.0.0  -lpthread -ldl -lobjc "
+conftest.c:5:57: warning: 'rb_thread_blocking_region' is deprecated [-Wdeprecated-declarations]
+int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+                                                        ^
+/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/intern.h:841:18: note: 'rb_thread_blocking_region' declared here
+DEPRECATED(VALUE rb_thread_blocking_region(rb_blocking_function_t *func, void *data1,
+                 ^
+/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0/ruby/config.h:92:52: note: expanded from macro 'DEPRECATED'
+#define DEPRECATED(x) __attribute__ ((deprecated)) x
+                                                   ^
+1 warning generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+ 6: int main(int argc, char **argv)
+ 7: {
+ 8:   if (argc > 1000000) {
+ 9:     printf("%p", &t);
+10:   }
+11: 
+12:   return 0;
+13: }
+/* end */
+
+--------------------
+
+have_header: checking for sys/select.h... -------------------- yes
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/select.h>
+/* end */
+
+--------------------
+
+have_header: checking for poll.h... -------------------- yes
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <poll.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/epoll.h... -------------------- no
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'sys/epoll.h' file not found
+#include <sys/epoll.h>
+         ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/epoll.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/event.h... -------------------- yes
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/event.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/queue.h... -------------------- yes
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/queue.h>
+/* end */
+
+--------------------
+
+have_header: checking for port.h... -------------------- no
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: 'port.h' file not found
+#include <port.h>
+         ^
+1 error generated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <port.h>
+/* end */
+
+--------------------
+
+have_header: checking for sys/resource.h... -------------------- yes
+
+"/usr/bin/clang -E -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/x86_64-darwin13.0.0 -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0/ruby/backward -I/Users/ProjectMongoose/.rvm/rubies/ruby-2.0.0-p353/include/ruby-2.0.0 -I. -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT -I/usr/local/opt/libyaml/include -I/usr/local/opt/readline/include -I/usr/local/opt/libksba/include -I/usr/local/opt/openssl/include    -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration  -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <sys/resource.h>
+/* end */
+
+--------------------
+
