@@ -100,6 +100,9 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
+    foundation-rails (5.1.1.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     guard (2.4.0)
@@ -299,6 +302,7 @@ DEPENDENCIES
   fabrication
   factory_girl_rails (= 4.2.0)
   figaro
+  foundation-rails
   guard-rspec
   guard-spork
   haml

@@ -1,4 +1,5 @@
 TraxterIo::Application.routes.draw do
+  devise_for :controllers
   get "home/index"
   devise_for :users
 

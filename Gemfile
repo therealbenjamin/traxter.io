@@ -34,6 +34,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'figaro'
 gem 'devise'
+gem 'foundation-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
