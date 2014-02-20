@@ -11,11 +11,11 @@ Then(/^I should see a contact link$/) do
 end
 
 Then(/^I should see a sign in link$/) do
-  expect(page).to have_link("Sign in", href: new_user_session_path)
+  expect(page).to have_link("Sign In", href: new_user_session_path)
 end
 
 Then(/^I should see a sign up link$/) do
-  expect(page).to have_link("Sign up now!", href: new_user_registration_path)
+  expect(page).to have_link("Sign Up", href: new_user_registration_path)
 end
 
 When(/^I click "(.*?)"$/) do |link|
@@ -40,7 +40,7 @@ Then(/^User count should change by (\d+)$/) do |num|
 end
 
 Then(/^I should see a welcome message$/) do
-  expect(page).to have_selector("div.alert.alert-notice")
+  expect(page).to have_selector("div.alert-box.success.radius")
 end
 
 Given(/^the following user:$/) do |table|
@@ -50,7 +50,7 @@ Given(/^the following user:$/) do |table|
 end
 
 Then(/^I should see an error message$/) do
-  expect(page).to have_selector("div.alert.alert-error")
+  expect(page).to have_selector("div#error_explanation")
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
@@ -61,12 +61,12 @@ Then(/^I should not see "(.*?)"$/) do |text|
   expect(page).not_to have_content(text)
 end
 
-Given(/^that I am signed in with "(.*?)"$/) do |provider|
-  valid_mock_auth_hash(provider)
-  visit "/users/auth/#{provider.downcase}"
-end
+# Given(/^that I am signed in with "(.*?)"$/) do |provider|
+#   valid_mock_auth_hash(provider)
+#   visit "/users/auth/#{provider.downcase}"
+# end
 
-When(/^I try and login with "(.*?)" using invalid credentials$/) do |provider|
-  invalid_mock_auth_hash(provider)
-  visit "/users/auth/#{provider.downcase}"
-end
+# When(/^I try and login with "(.*?)" using invalid credentials$/) do |provider|
+#   invalid_mock_auth_hash(provider)
+#   visit "/users/auth/#{provider.downcase}"
+# end

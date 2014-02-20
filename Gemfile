@@ -31,6 +31,7 @@ gem 'pg'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'haml'
+gem 'haml-rails'
 gem 'figaro'
 gem 'devise'
 
