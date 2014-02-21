@@ -256,6 +256,9 @@ GEM
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
     sexp_processor (4.4.1)
+    simple_form (3.0.1)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     simplecov (0.8.2)
       docile (~> 1.1.0)
       multi_json
@@ -339,6 +342,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
+  simple_form
   spork-rails
   sqlite3
   turbolinks

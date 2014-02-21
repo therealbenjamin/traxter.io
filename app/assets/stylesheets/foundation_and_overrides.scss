@@ -1196,19 +1196,15 @@
 @import 'foundation';
 @import url(http://fonts.googleapis.com/css?family=Faster+One);
 @import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
-// @include sticky-footer(72px, "#layout", "#layout_footer", "#footer");
 
-// image from http://wallpaperose.com/rainbow-orange-background.html
 body{
-  background: asset-url("Rainbow-Orange-Background.jpg", image)center;
-  background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: asset-url("http://www.wall321.com/thumbnails/detail/20121109/minimalistic%20venom%20marvel%20comics%20blue%20background%20villians%20blo0p%201920x1080%20wallpaper_www.wall321.com_20.jpg", image) bottom;
+  background-size: 120%;
+    -webkit-background-size: 120%;
+    -moz-background-size: 120%;
+    -o-background-size: 120%;
+    background-size: 120%;
 }
-
-// image from http://pixabay.com/en/tucan-bird-parrot-colorful-beak-155252/
 
 #title{
   color: white;
@@ -1247,18 +1243,6 @@ h2 {
 	z-index: 210;
 	color: white;
 }
-
-// .footer {
-// 	color: white;
-// 	background-color: rgb(38, 38, 38);
-// 	margin-top: 12px;
-// 	list-style-type: none;
-// 	text-align: center;
-// 	clear: both;
-// 	position: relative;
-// 	height: 1200px;
-// 	top: 42%;
-// }
 
 .footer p {
 	padding-left: 20px;
