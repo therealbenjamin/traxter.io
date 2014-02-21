@@ -1196,6 +1196,7 @@
 @import 'foundation';
 @import url(http://fonts.googleapis.com/css?family=Faster+One);
 @import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
+// @include sticky-footer(72px, "#layout", "#layout_footer", "#footer");
 
 // image from http://wallpaperose.com/rainbow-orange-background.html
 body{
@@ -1208,11 +1209,6 @@ body{
 }
 
 // image from http://pixabay.com/en/tucan-bird-parrot-colorful-beak-155252/
-#tucan{
-  display: inline;
-  position:absolute;
-  right: 100px;
-}
 
 #title{
   color: white;
@@ -1223,21 +1219,63 @@ body{
 
 body {
 	font-family: 'Alegreya Sans', sans-serif;
+	height: 100%;
+	min-height: 100%;
 }
 
 h2 {
 	text-align: center;
 	font-family: 'Alegreya Sans', sans-serif;
+	padding-top: 10%;
 }
-
-
 
 .contain-to-grid .top-bar{margin-bottom: 20px;}
 
 .new_user {
-	// width: 300px;
 	margin-left: 500px;
 	margin-right: 500px;
 	text-align: center;
 }
+
+.footer {
+	background-color: rgb(38, 38, 38);
+	width: 100%;
+	height: 45px;
+	position: fixed;
+	bottom: 0px;
+	margin-bottom: 0px;
+	z-index: 210;
+	color: white;
+}
+
+// .footer {
+// 	color: white;
+// 	background-color: rgb(38, 38, 38);
+// 	margin-top: 12px;
+// 	list-style-type: none;
+// 	text-align: center;
+// 	clear: both;
+// 	position: relative;
+// 	height: 1200px;
+// 	top: 42%;
+// }
+
+.footer p {
+	padding-left: 20px;
+	padding-top: 12px;
+}
+
+.footer ul {
+	list-style-type: none;
+}
+
+.footer ul li {
+	display: inline-block;
+	right: 80%;
+	padding-right: 12px;
+}
+
+
+
+
 
