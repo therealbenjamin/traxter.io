@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
    after_validation :normalize_username, on: :create
 
-   def self.find_for_database_authentication(condition)
+   def self.find_for_database_authentication condition
    	self.where(:username => condition[:email]).first || self.where(:email => condition[:email]).first
    end
 

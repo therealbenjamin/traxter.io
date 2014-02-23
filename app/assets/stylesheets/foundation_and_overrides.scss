@@ -1198,7 +1198,18 @@
 @import url(http://fonts.googleapis.com/css?family=Alegreya+Sans);
 
 body{
-  background: asset-url("http://www.wall321.com/thumbnails/detail/20121109/minimalistic%20venom%20marvel%20comics%20blue%20background%20villians%20blo0p%201920x1080%20wallpaper_www.wall321.com_20.jpg", image) bottom;
+  background-image: -webkit-gradient(
+	linear,
+	left top,
+	left bottom,
+	color-stop(0, #A11717),
+	color-stop(1, #000000)
+);
+	background-image: -o-linear-gradient(bottom, #A11717 0%, #000000 100%);
+	background-image: -moz-linear-gradient(bottom, #A11717 0%, #000000 100%);
+	background-image: -webkit-linear-gradient(bottom, #A11717 0%, #000000 100%);
+	background-image: -ms-linear-gradient(bottom, #A11717 0%, #000000 100%);
+	background-image: linear-gradient(to bottom, #A11717 0%, #000000 100%);
   background-size: 120%;
     -webkit-background-size: 120%;
     -moz-background-size: 120%;
@@ -1223,6 +1234,18 @@ h2 {
 	text-align: center;
 	font-family: 'Alegreya Sans', sans-serif;
 	padding-top: 10%;
+}
+
+label {
+	color: darkgray;
+}
+
+a {
+	color: black;
+}
+
+a:hover {
+	color: darkgray;
 }
 
 .contain-to-grid .top-bar{margin-bottom: 20px;}
