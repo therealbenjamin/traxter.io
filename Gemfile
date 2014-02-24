@@ -13,6 +13,11 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'pg'
 gem 'rails', '4.0.2'
+
+group :production do
+	gem 'rails_12factor'
+end
+
 gem 'sass-rails', '~> 4.0.0'
 gem 'simple_form'
 gem 'turbolinks'
