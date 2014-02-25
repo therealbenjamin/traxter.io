@@ -16,7 +16,7 @@ TraxterIo::Application.configure do
 
   config.assets.precompile += %w{ vendor/modernizr.js }
 
-  config.assets.initialize_on_precompile = false
+  config.assets.initialize_on_precompile = true
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.

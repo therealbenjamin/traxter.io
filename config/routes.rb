@@ -7,4 +7,5 @@ TraxterIo::Application.routes.draw do
   get "contact" => "static_pages#contact"
 
   resources :users, only: [:show]
+
 end
