@@ -1,5 +1,5 @@
 class ToursController < ApplicationController
-  before_action :set_tour, only: [:show, :edit, :update, :destroy]
+  before_action :current_tour, only: [:show, :edit, :update, :destroy]
 
   # GET /tours
   # GET /tours.json
@@ -10,6 +10,11 @@ class ToursController < ApplicationController
   # GET /tours/1
   # GET /tours/1.json
   def show
+    current_tour
+    @hash = Gmaps4rails.build_markers(current_tour) do |show, marker|
+      marker.lat show.latitude
+      marker.lng show.longitude
+    end
   end
 
   # GET /tours/new
@@ -63,7 +68,7 @@ class ToursController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_tour
+    def current_tour
       @tour = Tour.find(params[:id])
     end
 

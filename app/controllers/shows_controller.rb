@@ -4,7 +4,7 @@ class ShowsController < ApplicationController
 		@show = current_user.shows.new(show_params)
     if @show.save
       flash[:success] = "Show created successfully."
-      redirect_to root_path
+      redirect_to user_path(current_user)
     else
       render :new
     end

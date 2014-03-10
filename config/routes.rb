@@ -13,4 +13,6 @@
   resources :venues
 
   resources :shows
+
+  resources :tours
 end

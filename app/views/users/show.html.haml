@@ -4,10 +4,18 @@
 .row#test
 	.small-5.columns
 		#dashboard_wrapper
-			%button#add_show Add Show
-			%button#add_tour Add Tour
-			%button#your_tours View Tours
+			%button.radius#add_show
+				= link_to "Add Show", "/shows/new"
+			%button.radius#add_tour
+				=  link_to "Add Tour", "/tours/new"
+			%button.radius#your_tours
+				= link_to "View Tours", "/tours"
 			%h3 Tour Details
+			#tour
+				%ul.show
+					%li EX1
+					%li EX2
+					%li EX3
 	.small-2.columns
 	.small-5.columns
 		#map
@@ -29,5 +37,5 @@
 					"fillOpacity" : 0.7
 				}]);
 				handler.bounds.extendWith(markers);
-				handlder.fitMapToBounds();
+				handler.fitMapToBounds();
 			});

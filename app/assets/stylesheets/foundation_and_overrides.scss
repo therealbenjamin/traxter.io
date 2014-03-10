@@ -1232,6 +1232,7 @@ body {
 
 h1 {
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 h2 {
@@ -1313,10 +1314,35 @@ button#add_tour {
 	height: 600px;
 }
 
+#dashboard_wrapper ul li {
+	list-style-type: none;
+}
+
+#create_show_wrapper {
+	border: 1px solid darkgray;
+	margin-top: 12px;
+	width: 600px;
+	height: 600px;
+}
+
+#create_tour_wrapper {
+	border: 1px solid darkgray;
+	margin-top: 12px;
+	width: 600px;
+	height: 600px;
+}
+
+#view_tours_wrapper {
+	border: 1px solid darkgray;
+	margin-top: 12px;
+	width: 600px;
+	height: 600px;
+}
+
 #map {
 	border: 1px solid darkgray;
 	margin-top: 12px;
-	margin-right: 100px;
+	padding-right: 100px;
 	width: 600px;
 	height: 600px;
 }
@@ -1324,6 +1350,28 @@ button#add_tour {
 #test {
 	margin-left: 7%;
 }
+
+.show {
+	margin-right: 20px;
+}
+
+#add_show, #add_tour, #your_tours {
+	background-color: black;
+	color: white;
+}
+
+// #add_show:hover, #add_tour:hover, #your_tours:hover {
+// 	background-color: darkgray;
+// 	color: black;
+// }
+
+#new_tour {
+	margin-left: 500px;
+	margin-right: 500px;
+	text-align: center;
+}
+
+
 
 
 

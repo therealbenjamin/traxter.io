@@ -19,8 +19,29 @@
 //= require_tree .
 
 $(document).ready(function(){
-
+	$("#add_show").on("click", createShow);
+	// $("#add_tour").on("click", createTour);
+	$("#your_tours").on("click", viewTours);
+	$("#create_show_wrapper").hide();
+	$("#create_tour_wrapper").hide();
+	$("#view_tours_wrapper").hide();
 });
 
+function hideDashboardWrapper(){
+	$("#dashboard_wrapper").hide();
+}
 
-// $(function(){ $(document).foundation(); });
+function createShow(){
+	hideDashboardWrapper();
+	$("#create_show_wrapper").show();
+}
+
+function createTour(){
+	hideDashboardWrapper();
+	$("#create_tour_wrapper").show();
+}
+
+function viewTours(){
+	hideDashboardWrapper();
+	$("#view_tours_wrapper").show();
+}

@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :shows
-  has_many :venues
+  has_many :tours
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
