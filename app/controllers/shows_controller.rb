@@ -1,17 +1,17 @@
 class ShowsController < ApplicationController
 
 	def create
-		@show = current_user.shows.build(show_params)
-    if @trip.save
+		@show = current_user.shows.new(show_params)
+    if @show.save
       flash[:success] = "Show created successfully."
       redirect_to root_path
     else
-      render "static_pages/home"
+      render :new
     end
 	end
 
 	def show
-		@show = Show.find(params[:id])
+		@show = current_user.shows.find(params[:id])
 	end
 
 	private

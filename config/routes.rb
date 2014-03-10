@@ -1,5 +1,7 @@
-TraxterIo::Application.routes.draw do
-  devise_for :users, :controllers => { :registrations => :registrations}
+	TraxterIo::Application.routes.draw do
+  resources :tours
+
+  devise_for :users
   get "home/index"
 
   root :to => "static_pages#home"
@@ -8,4 +10,7 @@ TraxterIo::Application.routes.draw do
 
   resources :users, only: [:show]
 
+  resources :venues
+
+  resources :shows
 end

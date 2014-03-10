@@ -1,0 +1,33 @@
+.row
+	.small-12.columns
+		%h5.user_email= @user.email
+.row#test
+	.small-5.columns
+		#dashboard_wrapper
+			%button#add_show Add Show
+			%button#add_tour Add Tour
+			%button#your_tours View Tours
+			%h3 Tour Details
+	.small-2.columns
+	.small-5.columns
+		#map
+		:javascript
+			handler = Gmaps.build('Google');
+			handler.buildMap({ provider: {
+				zoom: 8,
+				center: new google.maps.LatLng(36.1667, -86.7833)
+			}, internal: {id: 'map'}}, function(){
+				markers = handler.addMarkers(#{raw @hash.to_json}, options = {
+					"animation" : google.maps.Animation.DROP
+				});
+				polyline = handler.addPolylines([#{raw @hash.to_json}, options = {
+					"geodesic" : true,
+					"strokeColor" : "#FF0000",
+					"strokeOpacity" : 0.3,
+					"strokeWeight" : 1,
+					"fillColor" : "#FF0000",
+					"fillOpacity" : 0.7
+				}]);
+				handler.bounds.extendWith(markers);
+				handlder.fitMapToBounds();
+			});

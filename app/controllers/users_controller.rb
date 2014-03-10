@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
+
+	before_filter :authenticate_user!
+
 	def show
-		redirect_to sign_in_path unless current_user
-    @user = User.find(params[:id])
-    # @shows = current_user.shows
-    binding.pry
+    @user = current_user
   end
 end

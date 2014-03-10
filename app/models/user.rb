@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+  has_many :shows
+  has_many :venues
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -12,7 +16,7 @@ class User < ActiveRecord::Base
 
    protected
 
-   def normalize_username
-   	self.username.downcase! if self.username
+   def normalize_email
+   	self.email.downcase! if self.email
    end
 end
